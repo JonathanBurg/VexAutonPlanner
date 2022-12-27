@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Cylinder?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="939.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.planner.autonplannervexv5.PlannerController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="564.0" layoutX="52.0" layoutY="14.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="7.0" width="564.0" />
+      <Pane fx:id="movementBorder" layoutX="50.0" layoutY="14.0" prefHeight="564.0" prefWidth="564.0" />
+      <GridPane gridLinesVisible="true" layoutX="52.0" layoutY="14.0" maxHeight="564.0" maxWidth="564.0" minHeight="564.0" minWidth="564.0" prefHeight="564.0" prefWidth="564.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <Line endX="200.0" endY="578.0" startX="50.0" startY="430.0" />
+      <Line endX="200.0" endY="578.0" layoutX="413.0" layoutY="-421.0" startX="50.0" startY="430.0" />
+      <Line fx:id="redCenterBorder" endX="636.0" endY="346.0" layoutX="-21.0" layoutY="222.0" startX="85.0" startY="-206.0" stroke="#888888" strokeWidth="2.0" />
+      <Line fx:id="blueCenterBorder" endX="619.0" endY="347.0" layoutX="-11.0" layoutY="232.0" startX="64.0" startY="-208.0" stroke="#888888" strokeWidth="2.0" />
+      <Line endX="620.0" endY="545.0" startX="620.0" startY="63.0" stroke="DODGERBLUE" strokeWidth="7.0" />
+      <Line endX="46.0" endY="548.0" startX="46.0" startY="66.0" stroke="RED" strokeWidth="7.0" />
+      <Line endX="45.0" endY="66.0" startX="5.0" startY="66.0" stroke="RED" strokeWidth="7.0" />
+      <Line endX="45.0" endY="550.0" startX="5.0" startY="550.0" stroke="RED" strokeWidth="7.0" />
+      <Line endX="663.0" endY="62.0" startX="620.0" startY="62.0" stroke="DODGERBLUE" strokeWidth="7.0" />
+      <Line endX="663.0" endY="545.0" startX="620.0" startY="545.0" stroke="DODGERBLUE" strokeWidth="7.0" />
+      <Circle fill="WHITE" layoutX="125.0" layoutY="503.0" radius="32.0" stroke="DODGERBLUE" strokeType="INSIDE" strokeWidth="3.0" />
+      <Circle fill="WHITE" layoutX="544.0" layoutY="88.0" radius="32.0" stroke="RED" strokeType="INSIDE" strokeWidth="3.0" />
+      <Polygon fx:id="blueGoalZone" fill="WHITE" layoutX="493.0" layoutY="262.0" points="-70.5, -54.5, 33.5, -54.5, 33.5, -65.5, -59.5, -65.5, -59.5, -156.5, -70.5, -156.5" stroke="DODGERBLUE" strokeType="INSIDE" strokeWidth="2.0" />
+      <Polygon fx:id="redGoalZone" fill="WHITE" layoutX="212.0" layoutY="541.0" points="-70.5, -54.5, 33.5, -54.5, 33.5, -65.5, -59.5, -65.5, -59.5, -156.5, -70.5, -156.5" rotate="180.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="237.5" layoutY="14.0" stroke="#888888" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="91.0" layoutX="425.5" layoutY="15.0" stroke="#888888" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="91.0" layoutX="237.5" layoutY="487.0" stroke="#888888" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="51.0" layoutX="425.5" layoutY="526.0" stroke="#888888" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="565.0" layoutY="481.5" stroke="#888888" strokeType="INSIDE" width="52.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="51.0" layoutY="105.5" stroke="#888888" strokeType="INSIDE" width="48.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="52.0" layoutY="387.5" stroke="#888888" strokeType="INSIDE" width="91.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" layoutX="525.0" layoutY="199.5" stroke="#888888" strokeType="INSIDE" width="92.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="603.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" width="13.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="50.0" layoutY="154.0" stroke="BLACK" strokeType="INSIDE" width="13.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="50.0" layoutY="111.0" stroke="BLACK" strokeType="INSIDE" width="13.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="13.0" layoutX="513.0" layoutY="565.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="13.0" layoutX="470.0" layoutY="565.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="13.0" layoutX="192.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="13.0" layoutX="148.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="603.0" layoutY="477.0" stroke="BLACK" strokeType="INSIDE" width="13.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="50.0" layoutY="111.0" stroke="BLACK" strokeType="INSIDE" width="13.0" />
+      <Polygon fill="WHITE" layoutX="658.0" layoutY="322.0" points="-50.0, -7.5, -31.5, -14.5, -31.5, -36.5, -50.0, -42.5" rotate="180.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+      <Polygon fill="WHITE" layoutX="91.0" layoutY="321.0" points="-50.0, -7.5, -31.5, -14.5, -31.5, -36.5, -50.0, -42.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="564.0" prefWidth="638.0">
+         <children>
+            <Circle fx:id="centerDisk1" fill="WHITE" layoutX="87.0" layoutY="51.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk2" fill="WHITE" layoutX="134.0" layoutY="97.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk3" fill="WHITE" layoutX="179.0" layoutY="143.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk4" fill="WHITE" layoutX="179.0" layoutY="143.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk5" fill="WHITE" layoutX="179.0" layoutY="143.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk6" fill="WHITE" layoutX="226.0" layoutY="189.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="CenterDisk7" fill="WHITE" layoutX="274.0" layoutY="236.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk8" fill="WHITE" layoutX="365.0" layoutY="329.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk9" fill="WHITE" layoutX="413.0" layoutY="377.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk13" fill="WHITE" layoutX="505.0" layoutY="468.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk14" fill="WHITE" layoutX="550.0" layoutY="516.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="blueDisk1" fill="WHITE" layoutX="273.0" layoutY="143.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="blueDisk2" fill="WHITE" layoutX="319.0" layoutY="190.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="RInputDisk4" fill="WHITE" layoutX="13.0" layoutY="282.0" onMouseClicked="#onRedInput4Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="RRightPreload2" fill="WHITE" layoutX="18.0" layoutY="444.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="BLeftPreload2" fill="WHITE" layoutX="622.0" layoutY="444.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="BRightPreload2" fill="WHITE" layoutX="622.0" layoutY="143.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="RLeftPreload2" fill="WHITE" layoutX="18.0" layoutY="120.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="RInputDisk5" fill="WHITE" layoutX="13.0" layoutY="313.0" onMouseClicked="#onRedInput5Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="RInputDisk2" fill="WHITE" layoutX="13.0" layoutY="220.0" onMouseClicked="#onRedInput2Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="RLeftPreload1" fill="WHITE" layoutX="18.0" layoutY="120.0" onMouseClicked="#onRedLeftPreClicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="RRightPreload1" fill="WHITE" layoutX="18.0" layoutY="444.0" onMouseClicked="#onRedRightPreClicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="RInputDisk6" fill="WHITE" layoutX="13.0" layoutY="344.0" onMouseClicked="#onRedInput6Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="RInputDisk7" fill="WHITE" layoutX="13.0" layoutY="375.0" onMouseClicked="#onRedInput7Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="blueDisk5" fill="WHITE" layoutX="459.0" layoutY="329.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="BInputDisk7" fill="WHITE" layoutX="626.0" layoutY="375.0" onMouseClicked="#onBlueInput7Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="BInputDisk6" fill="WHITE" layoutX="626.0" layoutY="344.0" onMouseClicked="#onBlueInput6Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="BInputDisk5" fill="WHITE" layoutX="626.0" layoutY="313.0" onMouseClicked="#onBlueInput5Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="BInputDisk2" fill="WHITE" layoutX="626.0" layoutY="220.0" onMouseClicked="#onBlueInput2Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="BInputDisk1" fill="WHITE" layoutX="626.0" layoutY="189.0" onMouseClicked="#onBlueInput1Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="BInputDisk3" fill="WHITE" layoutX="626.0" layoutY="251.0" onMouseClicked="#onBlueInput3Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="BInputDisk4" fill="WHITE" layoutX="626.0" layoutY="282.0" onMouseClicked="#onBlueInput4Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="RInputDisk3" fill="WHITE" layoutX="13.0" layoutY="251.0" onMouseClicked="#onRedInput3Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="RInputDisk1" fill="WHITE" layoutX="13.0" layoutY="189.0" onMouseClicked="#onRedInput1Clicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></Circle>
+            <Circle fx:id="redDisk9" fill="WHITE" layoutX="215.0" layoutY="359.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk8" fill="WHITE" layoutX="181.0" layoutY="359.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk10" fill="WHITE" layoutX="243.0" layoutY="386.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk11" fill="WHITE" layoutX="243.0" layoutY="421.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk12" fill="WHITE" layoutX="243.0" layoutY="456.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk7" fill="WHITE" layoutX="146.0" layoutY="359.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk6" fill="WHITE" layoutX="366.0" layoutY="422.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk5" fill="WHITE" layoutX="319.0" layoutY="375.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk4" fill="WHITE" layoutX="273.0" layoutY="329.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="blueDisk7" fill="WHITE" layoutX="396.0" layoutY="108.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="blueDisk3" fill="WHITE" layoutX="365.0" layoutY="236.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="blueDisk10" fill="WHITE" layoutX="422.0" layoutY="205.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fill="WHITE" layoutX="457.0" layoutY="205.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fill="WHITE" layoutX="492.0" layoutY="205.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="blueDisk9" fill="WHITE" layoutX="396.0" layoutY="178.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="blueDisk8" fill="WHITE" layoutX="396.0" layoutY="144.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fill="WHITE" layoutX="459.0" layoutY="421.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk12" fill="WHITE" layoutX="459.0" layoutY="421.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk11" fill="WHITE" layoutX="459.0" layoutY="421.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="centerDisk10" fill="WHITE" layoutX="459.0" layoutY="421.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk2" fill="WHITE" layoutX="179.0" layoutY="236.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk3" fill="WHITE" layoutX="179.0" layoutY="236.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="redDisk1" fill="WHITE" layoutX="179.0" layoutY="236.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="BLeftPreload1" fill="WHITE" layoutX="622.0" layoutY="444.0" onMouseClicked="#onBlueLeftPreClicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+            <Circle fx:id="BRightPreload1" fill="WHITE" layoutX="622.0" layoutY="143.0" onMouseClicked="#onBlueRightPreClicked" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Circle>
+            <Circle fx:id="blueDisk6" fill="WHITE" layoutX="461.0" layoutY="328.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Circle fx:id="blueDisk4" fill="WHITE" layoutX="459.0" layoutY="329.0" radius="12.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" />
+            <Cylinder fx:id="LRRoller" height="37.0" layoutX="46.0" layoutY="122.0" radius="6.0" />
+            <Cylinder fx:id="RBRoller" height="38.0" layoutX="159.0" layoutY="9.0" radius="6.0" rotate="90.0" />
+            <Cylinder fx:id="LBRoller" height="37.0" layoutX="594.0" layoutY="443.0" radius="6.0" />
+            <Cylinder fx:id="RRRoller" height="37.0" layoutX="480.0" layoutY="556.0" radius="6.0" rotate="90.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Cylinder>
+         </children>
+      </AnchorPane>
+      <Text layoutX="624.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="24.328449770870634">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text layoutX="624.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="24.32844977087052">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fx:id="num2" layoutX="20.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="24.328449770870407">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fx:id="num1" layoutX="20.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="24.328449770870407">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Text>
+      <Text fx:id="num4" layoutX="190.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+      <Text fx:id="num3" layoutX="190.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+      <Text fx:id="num5" layoutX="470.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+      <Text layoutX="470.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+      <ImageView fitHeight="160.0" fitWidth="996.0" layoutX="352.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/bcf0f4654f5828c12a22a6763aa8b90c27316048.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.5" layoutX="556.0" layoutY="654.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="70.5" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="7.0" layoutX="559.0" layoutY="715.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="19.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="7.0" layoutX="581.0" layoutY="715.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="19.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="7.0" layoutX="605.0" layoutY="715.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="19.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="7.0" layoutX="559.0" layoutY="656.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="19.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="7.0" layoutX="582.0" layoutY="656.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="19.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="7.0" layoutX="605.0" layoutY="656.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="19.0" />
+      <Line endX="70.5" endY="-7.0" layoutX="556.0" layoutY="672.0" startY="-7.0" visible="false" />
+      <Line endX="70.5" endY="-7.0" layoutX="556.0" layoutY="720.0" startY="-7.0" visible="false" />
+      <ButtonBar layoutX="190.0" layoutY="585.0" prefHeight="40.0" prefWidth="1.0" />
+      <TextArea editable="false" layoutX="669.0" layoutY="39.0" prefHeight="213.0" prefWidth="255.0" wrapText="true" />
+      <Text layoutX="669.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moves:" textAlignment="CENTER" wrappingWidth="255.0" />
+      <Button fx:id="leftFWDButton" layoutX="660.0" layoutY="265.0" mnemonicParsing="false" onAction="#onLeftFWDClick" prefHeight="25.0" prefWidth="90.0" text="LEFT FWD (↖)">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#15ff0080" height="25.0" layoutX="660.0" layoutY="265.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="rightFWDButton" layoutX="752.0" layoutY="265.0" mnemonicParsing="false" onAction="#onRightFWDClick" prefHeight="25.0" prefWidth="90.0" text="RIGHT FWD (↗)">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff220080" height="25.0" layoutX="752.0" layoutY="265.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="allFWDButton" layoutX="844.0" layoutY="265.0" mnemonicParsing="false" onAction="#onAllFWDClick" prefHeight="25.0" prefWidth="90.0" text="ALL FWD (↑)">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0037ff80" height="25.0" layoutX="844.0" layoutY="265.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="leftREVButton" layoutX="660.0" layoutY="298.0" mnemonicParsing="false" onAction="#onLeftREVClick" prefHeight="25.0" prefWidth="90.0" text="LEFT REV (↙)">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd90080" height="25.0" layoutX="660.0" layoutY="298.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="rightREVButton" layoutX="752.0" layoutY="298.0" mnemonicParsing="false" onAction="#onRightREVClick" prefHeight="25.0" prefWidth="90.0" text="RIGHT REV (↘)">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff007b80" height="25.0" layoutX="752.0" layoutY="298.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="allREVButton" layoutX="844.0" layoutY="298.0" mnemonicParsing="false" onAction="#onAllREVClick" prefHeight="25.0" prefWidth="90.0" text="ALL REV (↓)">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6f0080" height="25.0" layoutX="844.0" layoutY="298.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="intakeButton" layoutX="660.0" layoutY="331.0" mnemonicParsing="false" onAction="#onIntakeClick" prefWidth="90.0" text="INTAKE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00ffa180" height="25.0" layoutX="660.0" layoutY="331.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="outtakeButton" layoutX="752.0" layoutY="331.0" mnemonicParsing="false" onAction="#onOuttakeClick" prefWidth="90.0" text="OUTAKE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8c00ff80" height="25.0" layoutX="752.0" layoutY="331.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="expandButton" layoutX="844.0" layoutY="331.0" mnemonicParsing="false" prefWidth="90.0" text="EXPAND">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ccff0080" height="25.0" layoutX="844.0" layoutY="331.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+      <Button fx:id="resetButton" layoutX="660.0" layoutY="364.0" mnemonicParsing="false" onAction="#onResetClick" prefWidth="90.0" text="RESET">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="25.0" layoutX="660.0" layoutY="364.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0">
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="0.04265402843601896" endY="0.5023696682464456" startX="0.10900473933649286" startY="0.5687203791469194">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.22818791946308725">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.4798657718120805">
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.785234899328859">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Button fx:id="undoButton" layoutX="752.0" layoutY="364.0" mnemonicParsing="false" onAction="#onUndoButton" prefWidth="90.0" text="UNDO">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="25.0" layoutX="752.0" layoutY="364.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0">
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="0.16113744075829384" endY="0.4454976303317535" startX="0.14691943127962087" startY="0.4312796208530806">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.20426829268292682">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.2713414634146341">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.47563021771157304">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5536912751677853">
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6707317073170732">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Button fx:id="redoButton" layoutX="844.0" layoutY="364.0" mnemonicParsing="false" onAction="#onRedoClick" prefWidth="90.0" text="REDO">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ToggleButton fx:id="colorPicker" layoutX="705.5" layoutY="397.0" mnemonicParsing="false" onAction="#onColorChange" prefWidth="90.0" text="RED" />
+      <ToggleButton fx:id="autonPicker" layoutX="797.5" layoutY="397.0" mnemonicParsing="false" onAction="#onAutonChange" prefWidth="90.0" text="AUTON">
+         <textFill>
+            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="0.44075829383886256" startY="0.44075829383886256">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.26174496644295264">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7315436241610738">
+                     <color>
+                        <Color red="0.11764705926179886" green="0.5647059082984924" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.11999999731779099" green="0.5746666789054871" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </ToggleButton>
+      <Text layoutX="678.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Left Speed: 0" textAlignment="CENTER" wrappingWidth="83.0" />
+      <ScrollBar layoutX="669.0" layoutY="457.0" max="75.0" />
+      <Text layoutX="832.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Speed: 0" textAlignment="CENTER" wrappingWidth="83.5" />
+      <ScrollBar layoutX="824.0" layoutY="457.0" max="75.0" />
+      <Pane fx:id="robot" layoutX="297.0" layoutY="261.0" maxHeight="70.5" maxWidth="70.4" minHeight="70.5" minWidth="70.5" prefHeight="70.4" prefWidth="70.5">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="2.0" fill="#c9c9c9" height="70.5" layoutX="11.5" stroke="BLACK" strokeType="INSIDE" width="47.5">
+               <rotationAxis>
+                  <Point3D z="10.0" />
+               </rotationAxis>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#047500" height="19.0" layoutX="4.25" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="7.0">
+               <rotationAxis>
+                  <Point3D z="10.0" />
+               </rotationAxis>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#047500" height="19.0" layoutX="59.25" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="7.0">
+               <rotationAxis>
+                  <Point3D z="10.0" />
+               </rotationAxis>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#047500" height="19.0" layoutX="4.25" layoutY="25.5" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#047500" height="19.0" layoutX="4.25" layoutY="46.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#047500" height="19.0" layoutX="59.25" layoutY="25.5" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#047500" height="19.0" layoutX="59.25" layoutY="46.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+            <Circle fill="#9a9a9a" layoutX="37.5" layoutY="36.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="20.5" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="34.5" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="41.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="27.5" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="48.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="23.0" layoutX="40.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="41.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="23.0" layoutX="47.5" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="48.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#46484a" height="28.0" layoutX="24.5" layoutY="6.0" rotate="-60.0" stroke="BLACK" strokeType="INSIDE" width="2.0" />
+            <Line endX="36.5" endY="64.0" startX="16.5" startY="64.0" />
+            <Line endX="16.5" endY="28.0" startX="16.5" startY="63.0" />
+            <Line endX="56.0" endY="55.0" startX="36.5" startY="63.5" />
+            <Line endX="25.7928466796875" endY="54.20709228515625" layoutX="11.0" layoutY="10.0" startX="25.7928466796875" startY="38.0" />
+            <Line endX="35.5" endY="27.0" startX="16.5" startY="27.0" />
+            <Circle fx:id="disk" fill="#c9c9c9" layoutX="25.0" layoutY="56.0" radius="7.0" stroke="#e4cd00" strokeType="INSIDE" strokeWidth="4.0" visible="false" />
+            <Rectangle arcHeight="5.0" fill="#c3c3c3" height="12.0" layoutX="13.5" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+            <Rectangle arcHeight="5.0" fill="#c3c3c3" height="17.0" layoutX="28.5" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="8.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="11.0" layoutX="43.0" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+            <Rectangle arcHeight="5.0" fill="#c3c3c3" height="17.0" layoutX="16.5" layoutY="34.0" rotate="-10.3" stroke="BLACK" strokeType="INSIDE" width="8.0" />
+            <Rectangle arcHeight="5.0" fill="#c3c3c3" height="24.0" layoutX="30.5" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+            <Rectangle arcHeight="5.0" fill="#c3c3c3" height="24.0" layoutX="21.0" layoutY="43.0" rotate="-10.3" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="34.5" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Polyline fill="CHARTREUSE" layoutX="34.25" layoutY="-1.0" points="0.0,-16.5, -6.0, -7.5, -3.0, -7.5, -3.0, 0, 3.0, 0, 3.0,-7.5, 6.0, -7.5, 0.0,-16.5" strokeType="INSIDE" />
+            <Polyline fill="RED" layoutX="35.25" layoutY="71.5" points="0.0,16.5, -6.0, 7.5, -3.0, 7.5, -3.0, 0, 3.0, 0, 3.0,7.5, 6.0, 7.5, 0.0,16.5" strokeType="INSIDE" visible="false" />
+            <Polyline fill="#c9c9c9" layoutX="41.0" layoutY="64.0" points="0.0, 3.75, 0.0, 0.0, 6.0, 0.0, 6.0, 3.75" stroke="YELLOW" strokeType="INSIDE" />
+            <Polyline fill="#c9c9c9" layoutX="50.0" layoutY="64.0" points="0.0, 3.75, 0.0, 0.0, 6.0, 0.0, 6.0, 3.75" stroke="YELLOW" strokeType="INSIDE" />
+            <Rectangle arcHeight="5.0" fill="#c3c3c3" height="52.0" layoutX="54.5" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+            <Rectangle arcHeight="5.0" fill="#c3c3c3" height="52.0" layoutX="36.5" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="11.0" layoutX="48.0" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+            <Rectangle arcHeight="3.0" arcWidth="3.0" fill="#c9c9c9" height="70.5" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+            <Rectangle arcHeight="3.0" arcWidth="3.0" fill="#c9c9c9" height="70.5" layoutX="66.5" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+            <Rectangle arcHeight="19.0" arcWidth="5.0" fill="#c9c9c9" height="4.0" layoutX="2.75" layoutY="66.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+            <Rectangle arcHeight="19.0" arcWidth="5.0" fill="#c9c9c9" height="4.0" layoutX="58.0" layoutY="66.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+            <Rectangle arcHeight="19.0" arcWidth="5.0" fill="#c9c9c9" height="4.0" layoutX="2.75" layoutY="0.5" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+            <Rectangle arcHeight="19.0" arcWidth="5.0" fill="#c9c9c9" height="4.0" layoutX="58.0" layoutY="0.5" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="41.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="48.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="13.5" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+            <Rectangle arcHeight="5.0" arcWidth="4.0" fill="#46484a" height="12.0" layoutX="27.5" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="25.0" layoutX="844.0" layoutY="364.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0">
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="0.16113744075829384" endY="0.4454976303317535" startX="0.14691943127962087" startY="0.4312796208530806">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.04697986577181208">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.20426829268292682">
+                     <color>
+                        <Color red="0.15000000596046448" green="1.0" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.2713414634146341">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.47563021771157304">
+                     <color>
+                        <Color red="0.15000000596046448" green="1.0" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5536912751677853">
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6707317073170732">
+                     <color>
+                        <Color red="1.0" green="0.3333333432674408" opacity="0.5" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.15000000596046448" green="1.0" opacity="0.5" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff000080" height="25.0" layoutX="705.0" layoutY="397.0" mouseTransparent="true" stroke="TRANSPARENT" strokeType="INSIDE" width="90.0" />
+   </children>
+</AnchorPane>
